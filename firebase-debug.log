@@ -1,0 +1,204 @@
+[debug] [2020-03-12T08:54:55.848Z] ----------------------------------------------------------------------
+[debug] [2020-03-12T08:54:55.851Z] Command:       C:\Program Files\nodejs\node.exe C:\Users\User\AppData\Roaming\npm\node_modules\firebase-tools\lib\bin\firebase.js deploy
+[debug] [2020-03-12T08:54:55.852Z] CLI Version:   7.14.0
+[debug] [2020-03-12T08:54:55.852Z] Platform:      win32
+[debug] [2020-03-12T08:54:55.852Z] Node Version:  v12.11.1
+[debug] [2020-03-12T08:54:55.853Z] Time:          Thu Mar 12 2020 15:54:55 GMT+0700 (Indochina Time)
+[debug] [2020-03-12T08:54:55.853Z] ----------------------------------------------------------------------
+[debug] [2020-03-12T08:54:55.853Z] 
+[debug] [2020-03-12T08:54:55.869Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2020-03-12T08:54:55.871Z] > authorizing via signed-in user
+[debug] [2020-03-12T08:54:55.871Z] [iam] checking project health-cambodia for permissions ["cloudfunctions.functions.create","cloudfunctions.functions.delete","cloudfunctions.functions.get","cloudfunctions.functions.list","cloudfunctions.functions.update","cloudfunctions.operations.get","datastore.indexes.create","datastore.indexes.delete","datastore.indexes.list","datastore.indexes.update","firebase.projects.get","firebasedatabase.instances.update","firebasehosting.sites.update","firebaserules.releases.create","firebaserules.releases.update","firebaserules.rulesets.create"]
+[debug] [2020-03-12T08:54:55.875Z] > refreshing access token with scopes: ["email","https://www.googleapis.com/auth/cloud-platform","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","openid"]
+[debug] [2020-03-12T08:54:55.875Z] >>> HTTP REQUEST POST https://www.googleapis.com/oauth2/v3/token  
+ <request body omitted>
+[debug] [2020-03-12T08:54:56.122Z] <<< HTTP RESPONSE 200
+[debug] [2020-03-12T08:54:56.132Z] >>> HTTP REQUEST POST https://cloudresourcemanager.googleapis.com/v1/projects/health-cambodia:testIamPermissions  
+
+[debug] [2020-03-12T08:54:57.404Z] <<< HTTP RESPONSE 200
+[debug] [2020-03-12T08:54:57.407Z] >>> HTTP REQUEST GET https://firebase.googleapis.com/v1beta1/projects/health-cambodia  
+ 
+[debug] [2020-03-12T08:54:57.803Z] <<< HTTP RESPONSE 200
+[info] 
+[info] === Deploying to 'health-cambodia'...
+[info] 
+[info] i  deploying database, storage, firestore, functions, hosting
+[info] Running command: npm --prefix "$RESOURCE_DIR" run build
+[info] +  functions: Finished running predeploy script.
+[info] i  database: checking rules syntax...
+[debug] [2020-03-12T08:55:11.587Z] >>> HTTP REQUEST PUT https://health-cambodia.firebaseio.com/.settings/rules.json?dryRun=true  
+ {
+  "rules": {
+    ".read": "auth != null",
+    ".write": "auth != null"
+  }
+}
+[debug] [2020-03-12T08:55:12.606Z] <<< HTTP RESPONSE 200
+[info] +  database: rules syntax for database health-cambodia is valid
+[debug] [2020-03-12T08:55:12.609Z] >>> HTTP REQUEST GET https://appengine.googleapis.com/v1/apps/health-cambodia  
+ 
+[debug] [2020-03-12T08:55:14.243Z] <<< HTTP RESPONSE 200
+[info] i  firebase.storage: checking storage.rules for compilation errors...
+[debug] [2020-03-12T08:55:14.267Z] >>> HTTP REQUEST POST https://firebaserules.googleapis.com/v1/projects/health-cambodia:test  
+
+[debug] [2020-03-12T08:55:15.803Z] <<< HTTP RESPONSE 200
+[warn] !  [W] undefined:undefined - Ruleset uses old version (version [1]). Please update to the latest version (version [2]).
+[info] +  firebase.storage: rules file storage.rules compiled successfully
+[info] i  firestore: reading indexes from firestore.indexes.json...
+[info] i  cloud.firestore: checking firestore.rules for compilation errors...
+[debug] [2020-03-12T08:55:15.833Z] >>> HTTP REQUEST POST https://firebaserules.googleapis.com/v1/projects/health-cambodia:test  
+
+[debug] [2020-03-12T08:55:17.293Z] <<< HTTP RESPONSE 200
+[info] +  cloud.firestore: rules file firestore.rules compiled successfully
+[debug] [2020-03-12T08:55:17.301Z] > [functions] package.json contents: {
+  "name": "functions",
+  "scripts": {
+    "build": "tsc",
+    "serve": "npm run build && firebase emulators:start --only functions",
+    "shell": "npm run build && firebase functions:shell",
+    "start": "npm run shell",
+    "deploy": "firebase deploy --only functions",
+    "logs": "firebase functions:log"
+  },
+  "engines": {
+    "node": "8"
+  },
+  "main": "lib/index.js",
+  "dependencies": {
+    "firebase-admin": "^8.6.0",
+    "firebase-functions": "^3.3.0"
+  },
+  "devDependencies": {
+    "typescript": "^3.2.2",
+    "firebase-functions-test": "^0.1.6"
+  },
+  "private": true
+}
+[info] i  functions: ensuring necessary APIs are enabled...
+[debug] [2020-03-12T08:55:17.303Z] >>> HTTP REQUEST GET https://serviceusage.googleapis.com/v1/projects/health-cambodia/services/cloudfunctions.googleapis.com  
+ 
+[debug] [2020-03-12T08:55:17.304Z] >>> HTTP REQUEST GET https://serviceusage.googleapis.com/v1/projects/health-cambodia/services/runtimeconfig.googleapis.com  
+ 
+[debug] [2020-03-12T08:55:18.889Z] <<< HTTP RESPONSE 200
+[debug] [2020-03-12T08:55:18.954Z] <<< HTTP RESPONSE 200
+[info] +  functions: all necessary APIs are enabled
+[debug] [2020-03-12T08:55:18.956Z] >>> HTTP REQUEST GET https://firebase.googleapis.com/v1beta1/projects/health-cambodia/adminSdkConfig  
+ 
+[debug] [2020-03-12T08:55:19.283Z] <<< HTTP RESPONSE 200
+[debug] [2020-03-12T08:55:19.285Z] >>> HTTP REQUEST POST https://firebasehosting.googleapis.com/v1beta1/sites/healthy-test/versions  
+
+[debug] [2020-03-12T08:55:21.426Z] <<< HTTP RESPONSE 200
+[debug] [2020-03-12T08:55:21.428Z] >>> HTTP REQUEST GET https://firebaserules.googleapis.com/v1/projects/health-cambodia/releases?pageSize=10&pageToken=  
+ 
+[debug] [2020-03-12T08:55:21.823Z] <<< HTTP RESPONSE 200
+[debug] [2020-03-12T08:55:21.825Z] >>> HTTP REQUEST GET https://firebaserules.googleapis.com/v1/projects/health-cambodia/rulesets/9f5f407e-e74e-4b84-ad08-a4d6c2486672  
+ 
+[debug] [2020-03-12T08:55:23.293Z] <<< HTTP RESPONSE 200
+[info] i  storage: uploading rules storage.rules...
+[debug] [2020-03-12T08:55:23.296Z] >>> HTTP REQUEST POST https://firebaserules.googleapis.com/v1/projects/health-cambodia/rulesets  
+
+[debug] [2020-03-12T08:55:25.073Z] <<< HTTP RESPONSE 200
+[debug] [2020-03-12T08:55:25.074Z] [rules] created ruleset projects/health-cambodia/rulesets/c483cb96-f9b8-47a6-ac34-acb1cc3bfc64
+[debug] [2020-03-12T08:55:25.083Z] >>> HTTP REQUEST GET https://firebaserules.googleapis.com/v1/projects/health-cambodia/releases?pageSize=10&pageToken=  
+ 
+[debug] [2020-03-12T08:55:25.083Z] >>> HTTP REQUEST GET https://firestore.googleapis.com/v1beta2/projects/health-cambodia/databases/(default)/collectionGroups/-/indexes  
+ 
+[debug] [2020-03-12T08:55:26.004Z] <<< HTTP RESPONSE 200
+[debug] [2020-03-12T08:55:26.005Z] >>> HTTP REQUEST GET https://firestore.googleapis.com/v1beta2/projects/health-cambodia/databases/(default)/collectionGroups/-/fields?filter=indexConfig.usesAncestorConfig=false  
+ 
+[debug] [2020-03-12T08:55:26.573Z] <<< HTTP RESPONSE 200
+[debug] [2020-03-12T08:55:26.575Z] >>> HTTP REQUEST GET https://firebaserules.googleapis.com/v1/projects/health-cambodia/rulesets/2a5f9223-66a3-4548-9286-b9b6417a15bc  
+ 
+[debug] [2020-03-12T08:55:26.863Z] <<< HTTP RESPONSE 200
+[debug] [2020-03-12T08:55:26.865Z] Skipping existing index: {"collectionGroup":"content","queryScope":"COLLECTION","fields":[{"fieldPath":"category.key","order":"ASCENDING"},{"fieldPath":"create_by.key","order":"ASCENDING"},{"fieldPath":"createDateKey","order":"DESCENDING"}]}
+[debug] [2020-03-12T08:55:26.865Z] Skipping existing index: {"collectionGroup":"content","queryScope":"COLLECTION","fields":[{"fieldPath":"category.key","order":"ASCENDING"},{"fieldPath":"createDateKey","order":"DESCENDING"}]}
+[debug] [2020-03-12T08:55:26.865Z] Skipping existing index: {"collectionGroup":"content","queryScope":"COLLECTION","fields":[{"fieldPath":"category.key","order":"ASCENDING"},{"fieldPath":"page_key","order":"DESCENDING"}]}
+[debug] [2020-03-12T08:55:26.865Z] Skipping existing index: {"collectionGroup":"content","queryScope":"COLLECTION","fields":[{"fieldPath":"category.key","order":"ASCENDING"},{"fieldPath":"status.key","order":"ASCENDING"},{"fieldPath":"page_key","order":"DESCENDING"}]}
+[debug] [2020-03-12T08:55:26.865Z] Skipping existing index: {"collectionGroup":"content","queryScope":"COLLECTION","fields":[{"fieldPath":"category.key","order":"ASCENDING"},{"fieldPath":"status.key","order":"ASCENDING"},{"fieldPath":"top_view","order":"DESCENDING"}]}
+[debug] [2020-03-12T08:55:26.865Z] Skipping existing index: {"collectionGroup":"content","queryScope":"COLLECTION","fields":[{"fieldPath":"create_by.key","order":"ASCENDING"},{"fieldPath":"page_key","order":"DESCENDING"}]}
+[debug] [2020-03-12T08:55:26.865Z] Skipping existing index: {"collectionGroup":"content","queryScope":"COLLECTION","fields":[{"fieldPath":"status.key","order":"ASCENDING"},{"fieldPath":"createDateKey","order":"DESCENDING"}]}
+[debug] [2020-03-12T08:55:26.867Z] Skipping existing index: {"collectionGroup":"content","queryScope":"COLLECTION","fields":[{"fieldPath":"status.key","order":"ASCENDING"},{"fieldPath":"name","order":"ASCENDING"}]}
+[debug] [2020-03-12T08:55:26.867Z] Skipping existing index: {"collectionGroup":"content","queryScope":"COLLECTION","fields":[{"fieldPath":"status.key","order":"ASCENDING"},{"fieldPath":"page_key","order":"DESCENDING"}]}
+[debug] [2020-03-12T08:55:26.867Z] Skipping existing index: {"collectionGroup":"content","queryScope":"COLLECTION","fields":[{"fieldPath":"status.key","order":"ASCENDING"},{"fieldPath":"sub_category.key","order":"ASCENDING"},{"fieldPath":"page_key","order":"DESCENDING"}]}
+[debug] [2020-03-12T08:55:26.867Z] Skipping existing index: {"collectionGroup":"content","queryScope":"COLLECTION","fields":[{"fieldPath":"status.key","order":"ASCENDING"},{"fieldPath":"top_view","order":"DESCENDING"}]}
+[debug] [2020-03-12T08:55:26.868Z] Skipping existing index: {"collectionGroup":"content","queryScope":"COLLECTION","fields":[{"fieldPath":"sub_category.key","order":"ASCENDING"},{"fieldPath":"page_key","order":"DESCENDING"}]}
+[debug] [2020-03-12T08:55:26.868Z] Skipping existing index: {"collectionGroup":"folder","queryScope":"COLLECTION","fields":[{"fieldPath":"folder_ref","order":"ASCENDING"},{"fieldPath":"page_key","order":"DESCENDING"}]}
+[debug] [2020-03-12T08:55:26.868Z] Skipping existing index: {"collectionGroup":"folder","queryScope":"COLLECTION","fields":[{"fieldPath":"key","order":"ASCENDING"},{"fieldPath":"page_key","order":"DESCENDING"}]}
+[debug] [2020-03-12T08:55:26.868Z] Skipping existing index: {"collectionGroup":"mobile_advertisement","queryScope":"COLLECTION","fields":[{"fieldPath":"advertiseType.key","order":"ASCENDING"},{"fieldPath":"expireDateKey","order":"ASCENDING"}]}
+[debug] [2020-03-12T08:55:26.868Z] Skipping existing index: {"collectionGroup":"mobile_advertisement","queryScope":"COLLECTION","fields":[{"fieldPath":"advertiseType.key","order":"ASCENDING"},{"fieldPath":"page_key","order":"ASCENDING"}]}
+[debug] [2020-03-12T08:55:26.868Z] Skipping existing index: {"collectionGroup":"sub_category","queryScope":"COLLECTION","fields":[{"fieldPath":"category.create_by.key","order":"ASCENDING"},{"fieldPath":"page_key","order":"DESCENDING"}]}
+[debug] [2020-03-12T08:55:26.868Z] Skipping existing index: {"collectionGroup":"web_advertisement","queryScope":"COLLECTION","fields":[{"fieldPath":"advertiseType.key","order":"ASCENDING"},{"fieldPath":"expireDateKey","order":"ASCENDING"}]}
+[debug] [2020-03-12T08:55:26.868Z] Skipping existing index: {"collectionGroup":"web_advertisement","queryScope":"COLLECTION","fields":[{"fieldPath":"advertiseType.key","order":"ASCENDING"},{"fieldPath":"page_key","order":"ASCENDING"}]}
+[info] +  firestore: deployed indexes in firestore.indexes.json successfully
+[debug] [2020-03-12T08:55:28.033Z] <<< HTTP RESPONSE 200
+[info] i  firestore: latest version of firestore.rules already up to date, skipping upload...
+[info] i  functions: preparing functions directory for uploading...
+[debug] [2020-03-12T08:55:28.039Z] >>> HTTP REQUEST GET https://runtimeconfig.googleapis.com/v1beta1/projects/health-cambodia/configs  
+ 
+[debug] [2020-03-12T08:55:29.883Z] <<< HTTP RESPONSE 200
+[info] i  functions: packaged functions (30.59 KB) for uploading
+[debug] [2020-03-12T08:55:30.261Z] >>> HTTP REQUEST POST https://cloudfunctions.googleapis.com/v1/projects/health-cambodia/locations/us-central1/functions:generateUploadUrl  
+ 
+[debug] [2020-03-12T08:55:31.463Z] <<< HTTP RESPONSE 200
+[debug] [2020-03-12T08:55:31.464Z] >>> HTTP REQUEST PUT https://storage.googleapis.com/gcf-upload-us-central1-c254add6-6892-47d7-96a0-a13cd014a28e/fa3a4c99-d353-4d29-a408-768db985a6bc.zip?GoogleAccessId=service-364469294740@gcf-admin-robot.iam.gserviceaccount.com&Expires=1584005130&Signature=Ara2gvzqYG9PQpz0%2Br109R07%2FFPEfrrUM%2BfvZZ4n10GJODxBXhAmP9f3cBfesuIv1bM0QVyyCUUH0%2ByMucp96Z3YFRIMl0ePZSrvxtLZ4FDA8WxSK1OXK35arpfSIuUSpB1Eqj1dzrpxmCUJwxW62XTgqJWPzD6VjaBCfozsfSsZwBREmRYh1gsplLNlAbIbkXKy%2FtfNi6FST8o%2Fvl0lg8h91ZF8nzoow%2BoyEbW4B%2FOAGRMRKC53cC7iUjfm83qKHG0Ih5nR6I%2Bu%2FdcOPvHVw7gYAJzWKOD2L1j3TooF9X5nSt0aBiZj%2B9QJX3ZhRy4K8us1RT5FRl36xCEpDIVyMw%3D%3D  
+ <request body omitted>
+[debug] [2020-03-12T08:55:32.054Z] <<< HTTP RESPONSE 200
+[info] +  functions: functions folder uploaded successfully
+[info] i  hosting[healthy-test]: beginning deploy...
+[info] i  hosting[healthy-test]: found 41 files in dist/healthy
+[debug] [2020-03-12T08:55:32.150Z] [hosting] hash cache [ZGlzdFxoZWFsdGh5] stored for 41 files
+[debug] [2020-03-12T08:55:32.150Z] [hosting][hash queue][FINAL]
+[debug] [2020-03-12T08:55:32.151Z] >>> HTTP REQUEST POST https://firebasehosting.googleapis.com/v1beta1/sites/healthy-test/versions/e914044b2fc9f172:populateFiles  
+ <request body omitted>
+[debug] [2020-03-12T08:55:33.942Z] <<< HTTP RESPONSE 200
+[debug] [2020-03-12T08:55:33.943Z] [hosting][populate queue][FINAL]
+[debug] [2020-03-12T08:55:33.944Z] [hosting] uploads queued: 0
+[debug] [2020-03-12T08:55:33.944Z] [hosting][upload queue][FINAL]
+[info] +  hosting[healthy-test]: file upload complete
+[debug] [2020-03-12T08:55:33.946Z] [hosting] deploy completed after 1888ms
+[info] i  database: releasing rules...
+[debug] [2020-03-12T08:55:34.127Z] >>> HTTP REQUEST PUT https://health-cambodia.firebaseio.com/.settings/rules.json  
+ {
+  "rules": {
+    ".read": "auth != null",
+    ".write": "auth != null"
+  }
+}
+[debug] [2020-03-12T08:55:35.035Z] <<< HTTP RESPONSE 200
+[info] +  database: rules for database health-cambodia released successfully
+[debug] [2020-03-12T08:55:35.058Z] [rules] releasing firebase.storage/health-cambodia.appspot.com with ruleset projects/health-cambodia/rulesets/c483cb96-f9b8-47a6-ac34-acb1cc3bfc64
+[debug] [2020-03-12T08:55:35.060Z] >>> HTTP REQUEST PATCH https://firebaserules.googleapis.com/v1/projects/health-cambodia/releases/firebase.storage/health-cambodia.appspot.com  
+
+[debug] [2020-03-12T08:55:36.575Z] <<< HTTP RESPONSE 200
+[debug] [2020-03-12T08:55:36.576Z] [rules] updated release projects/health-cambodia/releases/firebase.storage/health-cambodia.appspot.com
+[info] +  storage: released rules storage.rules to firebase.storage
+[debug] [2020-03-12T08:55:36.579Z] [rules] releasing cloud.firestore with ruleset projects/health-cambodia/rulesets/2a5f9223-66a3-4548-9286-b9b6417a15bc
+[debug] [2020-03-12T08:55:36.580Z] >>> HTTP REQUEST PATCH https://firebaserules.googleapis.com/v1/projects/health-cambodia/releases/cloud.firestore  
+
+[debug] [2020-03-12T08:55:36.984Z] <<< HTTP RESPONSE 200
+[debug] [2020-03-12T08:55:36.985Z] [rules] updated release projects/health-cambodia/releases/cloud.firestore
+[info] +  firestore: released rules firestore.rules to cloud.firestore
+[debug] [2020-03-12T08:55:36.989Z] >>> HTTP REQUEST GET https://cloudfunctions.googleapis.com/v1/projects/health-cambodia/locations/-/functions  
+ 
+[debug] [2020-03-12T08:55:37.499Z] <<< HTTP RESPONSE 200
+[info] i  functions: updating Node.js 8 function newssr(us-central1)...
+[debug] [2020-03-12T08:55:37.508Z] Trigger is:  {"httpsTrigger":{}}
+[info] 
+The following functions are found in your project but do not exist in your local source code:
+	deleteUser(us-central1)
+
+If you are renaming a function or changing its region, it is recommended that you create the new function first before deleting the old one to prevent event loss. For more info, visit https://firebase.google.com/docs/functions/manage-functions#modify
+
+[info] i  functions: continuing with other deployments.
+[debug] [2020-03-12T08:58:52.359Z] >>> HTTP REQUEST GET https://serviceusage.googleapis.com/v1/projects/health-cambodia/services/cloudscheduler.googleapis.com  
+ 
+[debug] [2020-03-12T08:58:54.145Z] <<< HTTP RESPONSE 200
+[debug] [2020-03-12T08:58:54.150Z] >>> HTTP REQUEST PATCH https://cloudfunctions.googleapis.com/v1/projects/health-cambodia/locations/us-central1/functions/newssr {"updateMask":"sourceUploadUrl,name,labels,runtime,httpsTrigger"} 
+
+[debug] [2020-03-12T08:58:56.159Z] <<< HTTP RESPONSE 200
+[debug] [2020-03-12T08:58:56.161Z] >>> HTTP REQUEST GET https://cloudfunctions.googleapis.com/v1/projects/health-cambodia/locations/-/functions  
+ 
+[debug] [2020-03-12T08:58:57.100Z] <<< HTTP RESPONSE 200
+[debug] [2020-03-12T08:58:57.101Z] >>> HTTP REQUEST GET https://cloudfunctions.googleapis.com/v1/operations/aGVhbHRoLWNhbWJvZGlhL3VzLWNlbnRyYWwxL25ld3Nzci9YUTNWN2dZZmlTVQ  
+ 
+[debug] [2020-03-12T08:58:57.852Z] <<< HTTP RESPONSE 200

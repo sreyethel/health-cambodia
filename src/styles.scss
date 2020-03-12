@@ -1,1 +1,82 @@
+// Custom Theming for Angular Material
+// For more information: https://material.angular.io/guide/theming
+@import "~@angular/material/theming";
+
+@import '~ngx-owl-carousel-o/lib/styles/scss/owl.carousel';
+@import '~ngx-owl-carousel-o/lib/styles/scss/owl.theme.default';
+
+// Plus imports for other components in your app.
+@import "./assets/font/font.css";
+@import "./assets/css/responsive.scss";
+
+@import "./assets/css/sidebar.scss";
+
+// Include the common styles for Angular Material. We include this here so that you only
+// have to load a single css file for Angular Material in your app.
+// Be sure that you only ever include this mixin once!
+@include mat-core();
+
+// Define the palettes for your theme using the Material Design palettes available in palette.scss
+// (imported above). For each palette, you can optionally specify a default, lighter, and darker
+// hue. Available color palettes: https://material.io/design/color/
+$businesshealthy-primary: mat-palette($mat-indigo);
+$businesshealthy-accent: mat-palette($mat-pink, A200, A100, A400);
+
+// The warn palette is optional (defaults to red).
+$businesshealthy-warn: mat-palette($mat-red);
+
+// Create the theme object (a Sass map containing all of the palettes).
+$businesshealthy-theme: mat-light-theme(
+  $businesshealthy-primary,
+  $businesshealthy-accent,
+  $businesshealthy-warn
+);
+
+// Include theme styles for core and each component used in your app.
+// Alternatively, you can import and @include the theme mixins for each component
+// that you are using.
+@include angular-material-theme($businesshealthy-theme);
+
 /* You can add global styles to this file, and also import other style files */
+* {
+  outline: none;
+}
+
+p {
+  margin: 0;
+  font-size: 14px;
+  color: #5f5c5c;
+  img {
+    max-width: 100% !important;
+    width: 100% !important;
+  }
+}
+
+.toggled-sidebar {
+  overflow: hidden;
+}
+
+.page-wrapper {
+  ::ng-deep.list-itme {
+    font-size: 0 !important;
+  }
+}
+.toggled-sidebar {
+  padding-left: 0;
+  overflow: hidden;
+  .mat-list-item {
+    display: block;
+  }
+}
+
+iframe{
+  width: 100%;
+  max-width: 100%;
+  // height: 400px;
+}
+
+body {
+  margin: 0;
+  background-color: #f6f6f6;
+  font-family: "Battambang", Arial, Helvetica, sans-serif !important;
+}

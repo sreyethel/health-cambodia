@@ -1,0 +1,31 @@
+<div class="right">
+    <div class="about-me">
+        <div class="box-header section-heading green">
+            <span class="h-text main-term-16 h-green main-green">
+                                ព័ត៌មានពេញនិយម
+                        </span>
+        </div>
+        <div class="card-right" *ngFor="let item of store?.data" matRipple (click)="goDetail(item?.slug)">
+            <div class="card-r-left">
+                <div class="card-r-img" [style.background-image]="item.fileurl | trustStyle"></div>
+            </div>
+            <div class="card-r-right">
+                <div class="card-r-text">
+                    <h3 class="card-r-title">
+                        {{item?.name}}
+                    </h3>
+                    <div class="card-r-des"></div>
+                </div>
+            </div>
+        </div>
+
+        <div class="card-adv">
+            <img [src]="ads?.rightSideAd?.fileurl" alt="adv right side" class="adv-right">
+        </div>
+    </div>
+</div>
+
+
+<button [ngClass]="{'show-scroll': showScroll}" (click)="gotoTop()" class="scroll-to-top" mat-flat-button color="warn">
+    <mat-icon matSuffix class="icon-search">keyboard_arrow_up</mat-icon>
+</button>

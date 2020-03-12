@@ -1,0 +1,79 @@
+.sidebar-web {
+    transition: width 0.2s;
+  }
+  .toggled-sidebar .sidebar-web {
+    width: 100%;
+  }
+  .logo-sidebar {
+    display: none;
+  }
+  
+  @media (max-width: 768px) {
+    .sidebar-web {
+      width: 0;
+      display: none;
+      overflow: hidden;
+    }
+    .logo-sidebar {
+      display: block !important;
+    }
+    .sidebar-web {
+      position: fixed;
+      top: 0;
+      left: 0;
+      bottom: 0;
+      width: 0;
+      background-color: #ffffff;
+      word-break: break-all;
+      display: flex;
+      flex-direction: column;
+      transition: width 0.2s;
+      z-index: 112;
+      background-attachment: fixed;
+      // background-image: url(https://www.gstatic.com/mobilesdk/190424_mobilesdk/nav_nachos@2x.png);
+      // background-position: left 0 bottom 0;
+      background-repeat: no-repeat;
+      background-size: 256px 556px;
+      // padding: 0 1rem;
+    }
+  }
+  
+  .sidebar-brand-web {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: auto;
+    border-bottom: 1px solid #f0e81f;
+    background-color: #fff;
+    position: relative;
+    .sbar-brand-name-web {
+      display: flex;
+      justify-content: center;
+      // position: relative;
+      img.logo-sidebar {
+        width: 70%;
+        padding: 9px 0;
+      }
+    }
+    .close-sidebar {
+      color: #ffffff;
+      font-size: 20px;
+      position: absolute;
+      top: 0.5rem;
+      right: 10px;
+    }
+  }
+  
+  @media (max-width: 375px) {
+    .divider {
+      border-top-color: #ffff;
+    }
+    .fas {
+      padding-right: 5px;
+    }
+    .content-img {
+      min-width: 100px !important;
+      min-height: 100px !important;
+    }
+  }
+  

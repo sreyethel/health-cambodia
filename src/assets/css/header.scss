@@ -1,0 +1,114 @@
+// style of header
+.section-heading {
+  padding: 0;
+  margin: 0 0 15px;
+  font-size: 16px;
+  line-height: 20px;
+  position: relative;
+  margin-bottom: 10px;
+}
+.section-heading:before {
+  bottom: 0;
+  margin-top: 0;
+  content: "";
+  display: inline-block;
+  height: 3px;
+  position: absolute;
+  // top: 0;
+  left: 0;
+  width: 100%;
+  //   background-color: #f903ae;
+}
+.section-heading:after {
+  content: "";
+  height: 4px;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+}
+.main-term-16 {
+  //   background-color: #f903ae;
+  padding: 7px 15px;
+  position: relative;
+  text-transform: uppercase;
+  text-decoration: none;
+  line-height: 32px;
+  font-size: 15px;
+  z-index: 1;
+  color: #fff;
+}
+.h-text:before {
+  content: "";
+  display: inline-block;
+  position: absolute;
+  top: 0;
+  right: -20px;
+  width: 0;
+  height: 0;
+  //   border-bottom: 30px solid #fc70d1;
+  border-right: 20px solid transparent;
+  z-index: 1;
+  box-sizing: border-box;
+}
+
+.pink:before {
+  background-color: #f903ae;
+}
+
+.main-pink {
+  background-color: #f903ae;
+}
+
+.h-pink:before {
+  border-bottom: 30px solid #fc70d1;
+}
+
+.yellow:before {
+  background-color: #e8a50b;
+}
+
+.main-yellow {
+  background-color: #e8a50b;
+}
+
+.h-yellow:before {
+  border-bottom: 30px solid #f2cc74;
+}
+
+.blue:before {
+  background-color: #1e73be;
+}
+
+.main-blue {
+  background-color: #1e73be;
+}
+
+.h-blue:before {
+  border-bottom: 30px solid #7fafda;
+}
+
+.green:before {
+  background-color: #13b21e;
+}
+
+.main-green {
+  background-color: #13b21e;
+}
+
+.h-green:before {
+  border-bottom: 30px solid #79d37f;
+}
+
+
+.lightBlue:before {
+  background-color: #1C91BD;
+}
+
+.main-lightBlue {
+  background-color: #1C91BD;
+}
+
+.h-lightBlue:before {
+  border-bottom: 30px solid #7EC0D9;
+}

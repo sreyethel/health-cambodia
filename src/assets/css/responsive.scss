@@ -1,0 +1,237 @@
+@media (min-width: 769px) {
+  .post-rele .card-rele{
+    max-width: 265.45px !important;
+  }
+
+}
+@media (min-width: 1023px) {
+  .sidebar-web {
+    display: none;
+  }
+  .sub-card:hover {
+    cursor: pointer;
+    .right-title {
+      color: #1e5087;
+    }
+  }
+}
+@media (min-width: 415px) {
+}
+
+@media (max-width: 1024px) {
+  .img-header-adv {
+    max-height: 74px !important;
+  }
+  .main-container {
+    width: auto !important;
+  }
+  .main-slide {
+    width: auto !important;
+  }
+  .sub-marquee {
+    width: auto !important;
+  }
+  .main-content {
+    flex-direction: column !important;
+  }
+  .sub-marquee {
+    max-width: 100%;
+  }
+  .main-content .left-side {
+    max-width: 100% !important;
+  }
+  // .feader-2row .feader-card {
+  //   // max-width: 466px !important;
+  // }
+  // .doctor-card {
+  //   // max-width: 466px !important;
+  // }
+  .right-side {
+    min-width: auto !important;
+    max-width: 100% !important;
+  }
+}
+
+@media (max-width: 877px) {
+  .feader-card {
+    max-width: 100% !important;
+    margin-right: 0px !important;
+  }
+  .doctor-card {
+    max-width: 100% !important;
+  }
+}
+
+@media (max-width: 768px) {
+  .footer-container {
+    flex-direction: column !important;
+  }
+  .logo-text{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+  }
+  .sidebar-brand-web .sbar-brand-name-web img.logo-sidebar{
+    min-width: 150px !important;
+    max-width: 150px !important;
+    max-height: 163.31px !important;
+  }
+
+  .icon-header-menu {
+    display: flex !important;
+    align-items: center;
+    color: #222 !important;
+    position: relative;
+    left: 5px;
+  }
+  .nav ul {
+    display: none !important;
+  }
+  .nav{
+    justify-content: flex-end !important;
+    form{
+      right: 10px !important;
+      position: absolute !important;
+      top: 8px !important;
+    }
+  }
+  
+}
+
+@media (max-width: 736px) {
+}
+
+@media (max-width: 614px) {
+  
+  .post-rele {
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+  .post-rele .card-rele .card-left {
+    min-width: 100% !important;
+  }
+}
+
+@media (max-width: 736px) {
+  .right-title {
+    height: auto !important;
+  }
+}
+
+@media (max-width: 414px) {
+  .profile{
+    flex-direction: column !important;
+    .p-left{
+      border: 0 !important;
+    }
+  }
+  .logo-sidebar{
+    max-height: 163.31px !important;
+  }
+  mat-form-field {
+    width: 100% !important;
+  }
+  form{
+    width: 109px !important;
+  }
+  .main-nav .nav{
+    width: auto !important;
+  }
+  .widget{
+    margin-right: 0 !important;
+  }
+  .header-container{
+    width:  auto !important;
+  }
+  .mr-2{
+    margin-right: 0 !important;
+  }
+  .feader-card{
+    width: 100% !important;
+  }
+  .main-slide {
+    flex-direction: column !important;
+  }
+  .card-sick {
+    margin-right: 0 !important;
+  }
+  .kid {
+    flex-direction: column !important;
+  }
+  .kid .sub-kid .kid-bg-card {
+    margin-bottom: 8px;
+    min-height: auto !important;
+    max-height: initial !important;
+    max-width: 100% !important;
+    min-width: auto !important;
+  }
+  .kid-list {
+    margin-left: 0 !important;
+  }
+  .doctor-card {
+    margin-right: 0 !important;
+  }
+  .newest-post {
+    flex-direction: column !important;
+  }
+  .right {
+    margin-left: 0 !important;
+  }
+  .header-container {
+    flex-direction: column !important;
+  }
+  .post-rele {
+    flex-direction: column !important;
+  }
+  .post-rele .card-rele .card-left {
+    min-height: 200px !important;
+    max-height: 200px !important;
+  }
+  .left {
+    width: 100% !important;
+  }
+  .right {
+    width: 100% !important;
+    margin-top: 10px !important;
+    // flex-direction: column !important;
+  }
+  .short-detail {
+    .title {
+      padding: 10px;
+    }
+  }
+  .newest-post .left .post {
+    min-height: 251px !important;
+    img {
+      object-fit: cover;
+    }
+  }
+
+  .newest-post .right .post {
+    width: 47% !important;
+    min-height: 157px !important;
+  }
+  .newest-post {
+    height: auto !important;
+  }
+  .adv-footer{
+    max-height: 35px;
+  }
+  .img-footer{
+    position: relative;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+}
+
+@media (max-width: 411px) {
+}
+
+@media (max-width: 360px) {
+}
+
+@media (max-width: 375px) {
+}
+
+@media (max-width: 320px) {
+}

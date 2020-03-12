@@ -1,0 +1,86 @@
+<div class="loading" *ngIf="store?.loading || store?.empty">
+    <mat-spinner diameter="50" ></mat-spinner>
+</div>
+
+<div class="newest-post" *ngIf="!store?.loading" >
+    <div class="left">
+        <div class="post" tabindex="0" (click)="goDetail(store?.dataNewestCate?.bigContent?.slug)"><img alt="bigContent" [src]="store?.dataNewestCate?.bigContent?.fileurl">
+            <div class="short-detail">
+                <div class="category">
+                    <div> {{store?.dataNewestCate?.bigContent?.category?.name}} </div> 
+                </div>
+                <h5 class="title"> {{store?.dataNewestCate?.bigContent?.name}} </h5>
+                <div class="more-detail">
+                    <mat-icon class="mat-icon notranslate material-icons mat-icon-no-color" role="img" aria-hidden="true">access_time</mat-icon> {{(store?.dataNewestCate?.bigContent?.create_date).toDate() | toCalendar}}
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="right">
+        <div class="post" tabindex="0" *ngFor="let item of store?.dataNewestCate?.smallContent" (click)="goDetail(item?.slug)">
+            <div class="img" [style.background-image]="item.fileurl | trustStyle"></div>
+            <div class="short-detail">
+                <div class="category">
+                    <div> {{item?.category?.name}} </div>
+                </div>
+                <h5 class="title"> {{item?.name}} </h5>
+                <div class="more-detail">
+                    <mat-icon class="mat-icon notranslate material-icons mat-icon-no-color" role="img" aria-hidden="true">access_time</mat-icon> {{(item?.create_date).toDate() | toCalendar}}
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="main-content concate" *ngIf="!store?.loading">
+    <div class="left-side">
+        <div class="main-card">
+            <div class="card-category">
+                <div class="box-header section-heading green">
+                    <span class="h-text main-term-16 h-green main-green">
+                        {{store?.dataNewestCate?.bigContent?.category?.name}}
+                    </span>
+                    <div class="pagin" *ngIf="store?.emptyCate">
+                        <button class="b-t" matRipple [disabled]="!store?.pageBack" (click)="viewMore('back')">
+                            <i class="material-icons">keyboard_arrow_left</i>
+                        </button>
+                        <button class="b-t" matRipple [disabled]="!store?.pageNext" (click)="viewMore('next')">
+                            <i class="material-icons">keyboard_arrow_right</i>
+                        </button>
+                    </div>
+                </div>
+                <div class="kid" *ngIf="store?.emptyCate">
+                    <div class="sub-kid">
+                        <div class="kid-bg-card" (click)="goDetail(store?.dataCa?.big?.slug)">
+                            <div class="kid-bg-c-text">
+                                <h3 class="k-b-c-title">
+                                    {{store?.dataCa?.big?.name}}
+                                </h3>
+                                <div class="k-b-c-des" *ngIf="store?.dataCa?.big?.editname">
+                                    {{ store?.dataCa?.big?.editname | strHtml }}
+                                </div>
+                            </div>
+                            <div class="kid-bg-c-img" [style.background-image]="store?.dataCa?.big?.fileurl | trustStyle"></div>
+                            <!-- [style.background-image]="'url('+ store?.dataCa?.big?.fileurl +')'" -->
+                        </div>
+                    </div>
+                    <div class="sub-kid">
+                        <div class="kid-list">
+                            <div class="kid-list-sm" *ngFor="let itm of store?.dataCa?.small" (click)="goDetail(itm?.slug)">
+                                <div class="k-l-sm-img" [style.background-image]="itm.fileurl | trustStyle"></div>
+                                <!-- [style.background-image]="'url('+ itm?.fileurl +')'" -->
+                                <h5 class="k-l-sm-text">
+                                    {{itm?.name}}
+                                </h5>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+    <div class="right-side" *ngIf="!store?.loading" >
+        <app-rightside></app-rightside>
+    </div>
+</div>

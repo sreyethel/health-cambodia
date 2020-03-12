@@ -1,0 +1,65 @@
+<div class="main-nav">
+    <i class="material-icons icon-header-menu" (click)="togglesidebar()">menu</i>
+
+    <div class="nav">
+        <ul id="main-navigation" class="flex-1">
+            <li class="menu-item icon-home" [routerLink]="['/']" [routerLinkActiveOptions]="{ exact: true }" routerLinkActive="active">
+                <span>ទំព័រដើម</span>
+            </li>
+            <li class="menu-item" [routerLink]="['/post/q7SMDEyZETYCvZDt8NNU']" routerLinkActive="active">
+                <span>ព័ត៌មាន</span>
+            </li>
+            <li class="menu-item" [routerLink]="['/post/vfP6KbkHcnmNHZnLhyW3']" routerLinkActive="active">
+                <span>ជំងឺ</span>
+            </li>
+            <li class="menu-item" [routerLink]="['/post/lgVvpzGmCiys3k9eylFq']" routerLinkActive="active">
+                <span>គ្រូពេទ្យ</span>
+            </li>
+            <li class="menu-item" [routerLink]="['/post/DFkxiMAkFrxA3Qw5uCMd']" routerLinkActive="active">
+                <span>មន្ទីរពេទ្យ</span>
+            </li>
+            <li class="menu-item" [routerLink]="['/post/DN1ntsqgz7MQbvZ65juI']" routerLinkActive="active">
+                <span>អាហារ</span>
+            </li>
+            <li class="menu-item" [routerLink]="['/post/KguAud8xbnLqF4KTAcbr']" routerLinkActive="active">
+                <span>ហាត់ប្រាណ</span>
+            </li>
+            <li class="menu-item" [routerLink]="['/post/vXEVr8vr6jQusyTPpcxw']" routerLinkActive="active">
+                <span>កុមារ</span>
+            </li>
+            <li class="menu-item" [routerLink]="['/post/tqinYPs1Kd7IZHsDxCkL']" routerLinkActive="active">
+                <span>បច្ចេកវិទ្យា</span>
+            </li>
+            <li class="menu-item" [routerLink]="['/post/FcMvC7mMQWkTET9o7izV']" routerLinkActive="active"
+                (click)="scrollToTop()">
+                <span>គំនិតរកសុី</span>
+            </li>
+        </ul>
+
+        <form action="" [formGroup]="form">
+            <mat-form-field appearance="outline">
+                <input type="text" placeholder="Search ..." aria-label="" matInput formControlName="search"
+                    [matAutocomplete]="auto" />
+                <mat-icon matSuffix class="icon-search">search</mat-icon>
+                <mat-autocomplete #auto="matAutocomplete" [displayWith]="displayItem"
+                    (optionSelected)="selectionChange($event)">
+                    <mat-option *ngFor="let option of searchData" [value]="option"
+                        [routerLink]="['/detail/' + option?.slug]">
+                        <span>
+                            <strong>{{ option.name }}</strong>
+                        </span>
+                    </mat-option>
+                </mat-autocomplete>
+                <mat-error class="error-message" *ngIf="form.controls['search'].hasError('validKey')">
+                    <div>You can only select from list.</div>
+                </mat-error>
+                <mat-error *ngIf="form.controls['search'].hasError('required')">
+                    Field is required.
+                </mat-error>
+            </mat-form-field>
+        </form>
+    </div>
+</div>
+
+
+<app-maquee></app-maquee>

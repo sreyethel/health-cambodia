@@ -1,0 +1,45 @@
+.main-marquee {
+    padding: 10px;
+    background: #F4F4F4;
+    border-bottom: 1px solid #E8E8E8;
+    font-size: 16px;
+    display: flex;
+    align-items: center;
+}
+.sub-marquee{
+    width: 1140px;
+    margin: 0 auto;
+}
+.main-marquee .logo-marquee {
+    height: 36px;
+    z-index: 2;
+    font-size: 18px;
+    padding: 0 21px 0 0;
+    color: #009900;
+    font-weight: 600;
+    position: absolute;
+    background-color: #F4F4F4;
+    display: -webkit-box;
+    display: flex;
+    align-items: center;
+}
+
+.main-marquee marquee {
+    color: #666666;
+    background-color: #F4F4F4;
+    height: 36px;
+    display: -webkit-box;
+    display: flex;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+    flex-direction: row;
+    -webkit-box-align: center;
+    align-items: center;
+}
+.editor{
+    position: relative;
+}
+marquee a{
+    text-decoration: none;
+    color: #222222;
+}

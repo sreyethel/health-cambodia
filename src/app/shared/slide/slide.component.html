@@ -1,0 +1,28 @@
+<div class="main-slide" *ngIf="!store?.loading">
+    <div class="sub-slide mr-2">
+        <div class="post" tabindex="0" (click)="goDetail(store?.bigContent?.slug)">
+            <img alt="file" src="{{store?.bigContent?.fileurl}}" matRipple >
+            <div class="short-detail">
+                <div class="category">
+                    <div> {{store?.bigContent?.category?.name}}</div>
+                </div>
+                <h4 class="title"> {{store?.bigContent?.name}} </h4>
+                <div class="more-detail">
+                    {{ store?.bigContent?.create_date?.toDate() | condate }}
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="sub-slide">
+        <div class="card-slide" *ngFor="let item of store?.smallContent" matRipple (click)="goDetail(item?.slug)">
+            <div class="card-s-left">
+                <div class="img-slide" [style.background-image]="item.fileurl | trustStyle"></div>
+            </div>
+            <div class="card-s-right">
+                <h2 class="c-s-r-title">
+                    {{item?.name}}
+                </h2>
+            </div>
+        </div>
+    </div>
+</div>

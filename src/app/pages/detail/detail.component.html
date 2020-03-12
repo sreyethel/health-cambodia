@@ -1,0 +1,95 @@
+<div class="loading" *ngIf="store?.loading || store?.empty">
+    <mat-spinner diameter="50"></mat-spinner>
+</div>
+
+
+<div class="main-content" *ngIf="!store?.loading">
+    <div class="left-side">
+        <div class="main-card">
+            <div class="detail">
+                <div class="box-header section-heading green">
+                    <span class="h-text main-term-16 h-green main-green">
+                        ព័ត៌មាន
+                    </span>
+                </div>
+
+                <img [src]="ads?.headerAds?.fileurl" alt="Ads" class="adv-detail">
+
+                <div class="detail-title">
+                    {{detail?.name}}
+                </div>
+                <div class="d-d-s">
+                    <div class="detail-date">
+                        {{(detail?.detail?.create_date).toDate() | toCalendar}} <span>&nbsp;&nbsp; - &nbsp;&nbsp;
+                        </span>
+                        <mat-icon matSuffix class="icon-eye">remove_red_eye</mat-icon>
+                        <span class="view">&nbsp;{{detail?.detail?.top_view}}&nbsp;</span>
+                    </div>
+                    <div class="detail-social">
+                        <div class="s-s-1"></div>
+                        <div class="btn-facebook">
+                            <a href="https://www.facebook.com/sharer/sharer.php?u={{url}}%2F&amp;src=sdkpreparse"
+                                target="_blank">
+                                facebook
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <div class="header-detail-img">
+                    <img [src]="detail?.detail?.fileurl" alt="">
+                </div>
+                <div class="detail-des" [innerHTML]="detail?.detail?.editname | trustHtml"></div>
+
+                <div class="profile" *ngIf="detail?.detail?.create_by">
+                    <div class="p-left">
+                        <img [src]="detail?.detail?.create_by?.userRef | docRef:'profile' | async" alt="" class="p-l-pic">
+                        <div class="pl-name">{{detail?.detail?.create_by?.userRef | docRef:'name' | async}}</div>
+                        <div class="p-l-sol">
+                            <a [href]="detail?.detail?.create_by?.userRef | docRef:'facebook' | async" target="_blank">
+                                <img src="../../../assets/img/facebook.png" alt="" class="pl-sol-img">
+                            </a>
+                            <a [href]="detail?.detail?.create_by?.userRef | docRef:'googleplus' | async" target="_blank">
+                                <img src="../../../assets/img/google.png" alt="" class="pl-sol-img">
+                            </a>
+                            <a [href]="detail?.detail?.create_by?.userRef | docRef:'linkin' | async" target="_blank">
+                                <img src="../../../assets/img/linkedin.png" alt="" class="pl-sol-img">
+                            </a>
+                            <a [href]="detail?.detail?.create_by?.userRef | docRef:'youtube' | async" target="_blank">
+                                <img src="../../../assets/img/youtube.png" alt="" class="pl-sol-img">
+                            </a>
+                        </div>
+                    </div>
+                    <div class="p-right">
+                        <div class="p-r-top">
+                            About The Author
+                        </div>
+                        <div class="p-r-bottom">
+                            {{detail?.detail?.create_by?.userRef | docRef:'description' | async}}
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+            <div class="related">
+                <div class="box-header section-heading green re-green">
+                    <span class="h-text main-term-16 h-green main-green">
+                        ព័ត៌មានទាក់ទង
+                    </span>
+                </div>
+                <div class="post-rele">
+                    <div class="card-rele" matRipple *ngFor="let item of detail?.related"
+                        (click)="goDetail(item?.slug)">
+                        <div class="card-left" [style.background-image]="item.fileurl | trustStyle">
+                        </div>
+                        <div class="card-right">
+                            {{item?.name}}
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="right-side">
+        <app-rightside></app-rightside>
+    </div>
+</div>

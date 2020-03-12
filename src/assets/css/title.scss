@@ -1,0 +1,59 @@
+
+// title
+
+.section-heading {
+    padding: 0;
+    margin: 0 0 10px;
+    font-size: 16px;
+    line-height: 20px;
+    position: relative;
+  }
+  .section-heading:before {
+    bottom: 0;
+    margin-top: 0;
+    content: "";
+    display: inline-block;
+    height: 3px;
+    position: absolute;
+    left: 0;
+    width: 100%;
+  }
+  
+  
+  .green:before, .main-green {
+    background-color: #13b21e;
+  }
+  .main-term-16 {
+    padding: 7px 15px;
+    position: relative;
+    text-transform: uppercase;
+    text-decoration: none;
+    line-height: 32px;
+    font-size: 15px;
+    z-index: 1;
+    color: #fff;
+  }
+  
+  .green:before, .main-green {
+    background-color: #13b21e;
+  }
+  
+  .h-text:before {
+    content: "";
+    display: inline-block;
+    position: absolute;
+    top: 0;
+    right: -20px;
+    width: 0;
+    height: 0;
+    border-right: 20px solid transparent;
+    z-index: 1;
+    box-sizing: border-box;
+  }
+  
+  .h-green:before {
+    border-bottom: 30px solid #79d37f;
+  }
+  
+  
+  

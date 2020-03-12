@@ -1,0 +1,32 @@
+.main-header{
+    display: flex;
+    background-color: #ffffff;
+    border-bottom: 3px solid #009900;
+    background-image: url("../../../assets/img/HeroImage_102017_HomePage.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    min-height: 152.31px;
+    .header-container{
+        width: 1140px;
+        margin: 0 auto;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        .img-logo{
+            cursor: pointer;
+            width: 150px;
+            img.logo{
+                max-width: 100%;
+            }
+        }
+        .adv{
+            flex: 1;
+            display: flex;
+    justify-content: flex-end;
+        }
+    }
+}
+.img-header-adv{
+    max-width: 100%;
+    max-height: 100px;
+}

@@ -1,0 +1,132 @@
+
+<div *ngIf="!news?.loading">
+    <app-slide></app-slide>
+</div>
+
+<div class="loading" *ngIf="news?.loading || news?.empty">
+    <mat-spinner diameter="50" ></mat-spinner>
+</div>
+<div class="main-content" *ngIf="!news?.loading">
+    <div class="left-side">
+        <div class="main-card">
+            <div class="card-category">
+                <div class="box-header section-heading green">
+                    <span class="h-text main-term-16 h-green main-green">
+                        ព័ត៌មាន
+                    </span>
+                </div>
+                <div class="feader-2row">
+                    <div class="feader-card" *ngFor="let item of news?.data" matRipple (click)="goDetail(item?.slug)">
+                        <div class="feader-img" [style.background-image]="item.fileurl | trustStyle"></div>
+                        <div class="feader-text">
+                            <h4 class="feader-title">
+                                {{item?.name}}
+                            </h4>
+                            <div class="feader-des">
+                                <p class="card-box-des" [innerHTML]="(item?.editname | strHtml).toString()"></p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="card-category">
+                <div class="box-header section-heading green">
+                    <span class="h-text main-term-16 h-green main-green">
+                        ជំងឺ
+                    </span>
+                </div>
+
+                <owl-carousel-o [options]="customOptions">
+                    <ng-template carouselSlide *ngFor="let item of sick?.data" >
+                        <div class="card-sick">
+                            <div class="sick-header">
+                                <div class="sick-header-title">
+                                    {{item?.cate?.name}}
+                                </div>
+
+                            </div>
+                            <div class="sick-body">
+                                <div class="s-b-card" *ngFor="let item of item?.data" matRipple (click)="goDetail(item?.slug)">
+                                    <h4 class="s-b-c-title">
+                                        {{item?.name}}
+                                    </h4>
+                                    <div class="s-b-c-date">
+                                        {{ item?.create_date?.toDate() | toCalendar }}
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </ng-template>
+                   
+                </owl-carousel-o>
+
+            </div>
+
+
+            <div class="card-category">
+                <div class="box-header section-heading green">
+                    <span class="h-text main-term-16 h-green main-green">
+                        កុមារ
+                    </span>
+                </div>
+                <div class="kid">
+                    <div class="sub-kid">
+                        <div class="kid-bg-card" *ngFor="let item of kid?.dataSingle" matRipple (click)="goDetail(item?.slug)" >
+                            <div class="kid-bg-c-text">
+                                <h4 class="k-b-c-title">
+                                    {{item?.name}}
+                                </h4>
+                                <div class="k-b-c-des">
+                                    <p class="card-box-des" [innerHTML]="(item?.editname | strHtml).toString()"></p>
+                                </div>
+                            </div>
+                            <div class="kid-bg-c-img" [style.background-image]="item.fileurl | trustStyle"></div>
+                        </div>
+                    </div>
+                    <div class="sub-kid">
+                        <div class="kid-list">
+                            <div class="kid-list-sm" *ngFor="let item of kid?.data" (click)="goDetail(item?.slug)">
+                                <div class="k-l-sm-img" [style.background-image]="item.fileurl | trustStyle"></div>
+                                <h4 class="k-l-sm-text">
+                                    {{item?.name}}
+                                </h4>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+            <div class="card-category">
+                <div class="box-header section-heading green">
+                    <span class="h-text main-term-16 h-green main-green">
+                        គ្រូពេទ្យ
+                    </span>
+                </div>
+                <div class="doctor-list">
+                    <div class="doctor-card" *ngFor="let item of teacher?.data" matRipple (click)="goDetail(item?.slug)" >
+                        <h4 class="doctor-name">
+                            {{item?.name}}
+                        </h4>
+                        <div class="doctor-buttom">
+                            <div class="doc">
+                                <div class="img-doc" [style.background-image]="item.fileurl | trustStyle"></div>
+                            </div>
+                            <div class="doc">
+                                <div class="doc-des">
+                                    <p class="card-box-des" [innerHTML]="(item?.editname | strHtml).toString()"></p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+
+            </div>
+        </div>
+    </div>
+    <div class="right-side">
+        <app-rightside></app-rightside>
+    </div>
+</div>

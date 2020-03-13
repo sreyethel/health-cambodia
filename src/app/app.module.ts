@@ -31,29 +31,26 @@ import { CondatePipe } from './pipes/condate.pipe';
 import { InfiniteScrollModule } from 'ngx-infinite-scroll';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
-import { PLATFORM_ID, APP_ID, Inject } from '@angular/core';
-import { isPlatformBrowser } from '@angular/common';
-import { MetaModule, MetaLoader, MetaStaticLoader, PageTitlePositioning } from '@ngx-meta/core';
+
 import { HttpClientModule, HttpClientJsonpModule } from '@angular/common/http';
 import { TrustHtmlPipe } from './pipes/trust-html.pipe';
 import { DocRefPipe } from './pipes/doc-ref.pipe';
 import { AngularResizedEventModule } from 'angular-resize-event';
 import { TrustStylePipe } from './pipes/trust-style.pipe';
 
-export function metaFactory(): MetaLoader {
-  return new MetaStaticLoader({
-    pageTitlePositioning: PageTitlePositioning.PrependPageTitle,
-    pageTitleSeparator: ' - ',
-    applicationName: 'Business Healthy',
-    defaults: {
-      title: 'Business Healthy ',
-      'og:image': '../../src/assets/img/Khmer-Family.png',
-      description: 'Cambodia most reliable health website aiming to help Cambodian people spend less and live more out of life.',
-      'og:type': 'website',
-
-    }
-  });
-}
+// export function metaFactory(): MetaLoader {
+//   return new MetaStaticLoader({
+//     pageTitlePositioning: PageTitlePositioning.PrependPageTitle,
+//     pageTitleSeparator: ' - ',
+//     applicationName: 'Business Healthy',
+//     defaults: {
+//       title: 'Business Healthy ',
+//       'og:image': '../../src/assets/img/Khmer-Family.png',
+//       description: 'Cambodia most reliable health website aiming to help Cambodian people spend less and live more out of life.',
+//       'og:type': 'website',
+//     }
+//   });
+// }
 
 @NgModule({
   declarations: [
@@ -77,7 +74,7 @@ export function metaFactory(): MetaLoader {
     TrustStylePipe,
   ],
   imports: [
-    BrowserModule.withServerTransition({ appId: 'serverApp' }),
+    BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
     InfiniteScrollModule,
@@ -91,11 +88,10 @@ export function metaFactory(): MetaLoader {
     ReactiveFormsModule,
     HttpClientModule,
     HttpClientJsonpModule,
-
-    MetaModule.forRoot({
-      provide: MetaLoader,
-      useFactory: (metaFactory)
-    }),
+    // MetaModule.forRoot({
+    //   provide: MetaLoader,
+    //   useFactory: (metaFactory)
+    // }),
     AngularResizedEventModule
 
   ],
@@ -103,11 +99,11 @@ export function metaFactory(): MetaLoader {
   bootstrap: [AppComponent]
 })
 export class AppModule {
-  constructor(
-    @Inject(PLATFORM_ID) private platformId: Object,
-    @Inject(APP_ID) private appId: string) {
-    const platform = isPlatformBrowser(platformId) ?
-      'in the browser' : 'on the server';
-    console.log(`Running ${platform} with appId=${appId}`);
-  }
+  // constructor(
+  //   @Inject(PLATFORM_ID) private platformId: Object,
+  //   @Inject(APP_ID) private appId: string) {
+  //   const platform = isPlatformBrowser(platformId) ?
+  //     'in the browser' : 'on the server';
+  //   console.log(`Running ${platform} with appId=${appId}`);
+  // }
 }

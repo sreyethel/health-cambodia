@@ -30,7 +30,7 @@ export class HomeComponent implements OnInit {
         items: 1
       },
       400: {
-        items:1
+        items: 1
       },
       740: {
         items: 2
@@ -43,26 +43,28 @@ export class HomeComponent implements OnInit {
   }
   items: Observable<any[]>;
   constructor(
-    public store:Home,
-    public news:News,
-    public sick:Sick,
-    public kid:Kid,
-    public teacher:Teacher,
-    private router:Router,
+    public store: Home,
+    public news: News,
+    public sick: Sick,
+    public kid: Kid,
+    public teacher: Teacher,
+    private router: Router,
     firestore: AngularFirestore
 
-  ) { 
+  ) {
 
- 
+
     // firestore.collection('content',ref=>ref.limit(20)).valueChanges().subscribe((item)=>{
     //   console.log('this.item', item)
     // });
+
+
     this.store.getContent()
     this.teacher.getTeacher()
     this.news.getNews()
     this.kid.getkid()
     this.kid.getKidSingle()
-  
+
     this.sick.getsubCate()
     const dataDate = this._onFormat()
 
@@ -71,9 +73,9 @@ export class HomeComponent implements OnInit {
 
   ngOnInit() {
 
-  
 
-   
+
+
 
 
   }
@@ -83,8 +85,8 @@ export class HomeComponent implements OnInit {
     return moment(new Date()).format('Do MMMM YYYY, h:mm a')
   }
 
-  goDetail(slug){
-    this.router.navigate(['detail/'+slug]);
+  goDetail(slug) {
+    this.router.navigate(['detail/' + slug]);
   }
-  
+
 }

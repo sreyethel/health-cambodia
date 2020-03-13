@@ -1,0 +1,287 @@
+{
+  "indexes": [
+    {
+      "collectionGroup": "content",
+      "queryScope": "COLLECTION",
+      "fields": [
+        {
+          "fieldPath": "category.key",
+          "order": "ASCENDING"
+        },
+        {
+          "fieldPath": "create_by.key",
+          "order": "ASCENDING"
+        },
+        {
+          "fieldPath": "createDateKey",
+          "order": "DESCENDING"
+        }
+      ]
+    },
+    {
+      "collectionGroup": "content",
+      "queryScope": "COLLECTION",
+      "fields": [
+        {
+          "fieldPath": "category.key",
+          "order": "ASCENDING"
+        },
+        {
+          "fieldPath": "createDateKey",
+          "order": "DESCENDING"
+        }
+      ]
+    },
+    {
+      "collectionGroup": "content",
+      "queryScope": "COLLECTION",
+      "fields": [
+        {
+          "fieldPath": "category.key",
+          "order": "ASCENDING"
+        },
+        {
+          "fieldPath": "page_key",
+          "order": "DESCENDING"
+        }
+      ]
+    },
+    {
+      "collectionGroup": "content",
+      "queryScope": "COLLECTION",
+      "fields": [
+        {
+          "fieldPath": "category.key",
+          "order": "ASCENDING"
+        },
+        {
+          "fieldPath": "status.key",
+          "order": "ASCENDING"
+        },
+        {
+          "fieldPath": "page_key",
+          "order": "DESCENDING"
+        }
+      ]
+    },
+    {
+      "collectionGroup": "content",
+      "queryScope": "COLLECTION",
+      "fields": [
+        {
+          "fieldPath": "category.key",
+          "order": "ASCENDING"
+        },
+        {
+          "fieldPath": "status.key",
+          "order": "ASCENDING"
+        },
+        {
+          "fieldPath": "top_view",
+          "order": "DESCENDING"
+        }
+      ]
+    },
+    {
+      "collectionGroup": "content",
+      "queryScope": "COLLECTION",
+      "fields": [
+        {
+          "fieldPath": "create_by.key",
+          "order": "ASCENDING"
+        },
+        {
+          "fieldPath": "page_key",
+          "order": "DESCENDING"
+        }
+      ]
+    },
+    {
+      "collectionGroup": "content",
+      "queryScope": "COLLECTION",
+      "fields": [
+        {
+          "fieldPath": "status.key",
+          "order": "ASCENDING"
+        },
+        {
+          "fieldPath": "createDateKey",
+          "order": "DESCENDING"
+        }
+      ]
+    },
+    {
+      "collectionGroup": "content",
+      "queryScope": "COLLECTION",
+      "fields": [
+        {
+          "fieldPath": "status.key",
+          "order": "ASCENDING"
+        },
+        {
+          "fieldPath": "name",
+          "order": "ASCENDING"
+        }
+      ]
+    },
+    {
+      "collectionGroup": "content",
+      "queryScope": "COLLECTION",
+      "fields": [
+        {
+          "fieldPath": "status.key",
+          "order": "ASCENDING"
+        },
+        {
+          "fieldPath": "page_key",
+          "order": "DESCENDING"
+        }
+      ]
+    },
+    {
+      "collectionGroup": "content",
+      "queryScope": "COLLECTION",
+      "fields": [
+        {
+          "fieldPath": "status.key",
+          "order": "ASCENDING"
+        },
+        {
+          "fieldPath": "sub_category.key",
+          "order": "ASCENDING"
+        },
+        {
+          "fieldPath": "page_key",
+          "order": "DESCENDING"
+        }
+      ]
+    },
+    {
+      "collectionGroup": "content",
+      "queryScope": "COLLECTION",
+      "fields": [
+        {
+          "fieldPath": "status.key",
+          "order": "ASCENDING"
+        },
+        {
+          "fieldPath": "top_view",
+          "order": "DESCENDING"
+        }
+      ]
+    },
+    {
+      "collectionGroup": "content",
+      "queryScope": "COLLECTION",
+      "fields": [
+        {
+          "fieldPath": "sub_category.key",
+          "order": "ASCENDING"
+        },
+        {
+          "fieldPath": "page_key",
+          "order": "DESCENDING"
+        }
+      ]
+    },
+    {
+      "collectionGroup": "folder",
+      "queryScope": "COLLECTION",
+      "fields": [
+        {
+          "fieldPath": "folder_ref",
+          "order": "ASCENDING"
+        },
+        {
+          "fieldPath": "page_key",
+          "order": "DESCENDING"
+        }
+      ]
+    },
+    {
+      "collectionGroup": "folder",
+      "queryScope": "COLLECTION",
+      "fields": [
+        {
+          "fieldPath": "key",
+          "order": "ASCENDING"
+        },
+        {
+          "fieldPath": "page_key",
+          "order": "DESCENDING"
+        }
+      ]
+    },
+    {
+      "collectionGroup": "mobile_advertisement",
+      "queryScope": "COLLECTION",
+      "fields": [
+        {
+          "fieldPath": "advertiseType.key",
+          "order": "ASCENDING"
+        },
+        {
+          "fieldPath": "expireDateKey",
+          "order": "ASCENDING"
+        }
+      ]
+    },
+    {
+      "collectionGroup": "mobile_advertisement",
+      "queryScope": "COLLECTION",
+      "fields": [
+        {
+          "fieldPath": "advertiseType.key",
+          "order": "ASCENDING"
+        },
+        {
+          "fieldPath": "page_key",
+          "order": "ASCENDING"
+        }
+      ]
+    },
+    {
+      "collectionGroup": "sub_category",
+      "queryScope": "COLLECTION",
+      "fields": [
+        {
+          "fieldPath": "category.create_by.key",
+          "order": "ASCENDING"
+        },
+        {
+          "fieldPath": "page_key",
+          "order": "DESCENDING"
+        }
+      ]
+    },
+    {
+      "collectionGroup": "web_advertisement",
+      "queryScope": "COLLECTION",
+      "fields": [
+        {
+          "fieldPath": "advertiseType.key",
+          "order": "ASCENDING"
+        },
+        {
+          "fieldPath": "expireDateKey",
+          "order": "ASCENDING"
+        }
+      ]
+    },
+    {
+      "collectionGroup": "web_advertisement",
+      "queryScope": "COLLECTION",
+      "fields": [
+        {
+          "fieldPath": "advertiseType.key",
+          "order": "ASCENDING"
+        },
+        {
+          "fieldPath": "page_key",
+          "order": "ASCENDING"
+        }
+      ]
+    }
+  ],
+  "fieldOverrides": []
+}

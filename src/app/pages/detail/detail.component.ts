@@ -35,7 +35,7 @@ export class DetailComponent implements OnInit {
       const { slug } = param;
       this.detail.getDetail(slug);
       this.ads.fetchHeaderAd();
-      let urls = "https://healthy-test.web.app"+"/detail/"+slug;
+      let urls = "https://healthy-cambodia.com"+"/detail/"+slug;
       this.url = urls;
     })
 

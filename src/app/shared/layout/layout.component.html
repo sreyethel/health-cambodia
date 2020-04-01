@@ -9,81 +9,68 @@
 
 
 
-<aside  class="sidebar-web">
-    <div  class="sidebar-brand-web" routerlinkactive="active" tabindex="0">
+<aside class="sidebar-web">
+    <div class="sidebar-brand-web" routerlinkactive="active" tabindex="0">
         <div class="icon-close">
-            <i class="material-icons" style="color: #222;position: absolute;top: 10px;right: 10px;"
-                (click)="togglesidebar()">close</i>
+            <i class="material-icons" style="color: #222;position: absolute;top: 10px;right: 10px;" (click)="togglesidebar()">close</i>
         </div>
-        <div  class="sbar-brand-name-web">
+        <div class="sbar-brand-name-web">
             <div class="logo-text">
                 <img src="../../../assets/img/logo.png" alt="logo sidebar" class="logo-sidebar">
             </div>
         </div>
     </div>
-    <div  class="sidebar-list-wrapper">
+    <div class="sidebar-list-wrapper">
         <mat-list>
-            <mat-list-item matRipple (click)="togglesidebar()" [routerLink]="['/home']" >
-                <i class="material-icons">home</i>
-                &nbsp;&nbsp;
+            <mat-list-item matRipple (click)="togglesidebar()" [routerLink]="['']">
+                <i class="material-icons">home</i> &nbsp;&nbsp;
                 <span class="list-toggle"> ទំព័រដើម</span>
             </mat-list-item>
             <mat-divider class="divider"></mat-divider>
-            <mat-list-item matRipple (click)="togglesidebar()"
-            [routerLink]="['/post/q7SMDEyZETYCvZDt8NNU']">
-                <i class="material-icons">trip_origin</i>
-                &nbsp;&nbsp;
+            <mat-list-item matRipple (click)="togglesidebar()" [routerLink]="['/post/q7SMDEyZETYCvZDt8NNU']">
+                <i class="material-icons">trip_origin</i> &nbsp;&nbsp;
                 <span class="list-toggle"> ព័ត៌មាន</span>
             </mat-list-item>
             <mat-divider class="divider"></mat-divider>
             <mat-list-item matRipple (click)="togglesidebar()" [routerLink]="['/post/vfP6KbkHcnmNHZnLhyW3']">
-                <i class="material-icons">trip_origin</i>
-                &nbsp;&nbsp;
+                <i class="material-icons">trip_origin</i> &nbsp;&nbsp;
                 <span class="list-toggle"> ជំងឺ</span>
             </mat-list-item>
             <mat-divider class="divider"></mat-divider>
             <mat-list-item matRipple (click)="togglesidebar()" [routerLink]="['/post/DFkxiMAkFrxA3Qw5uCMd']">
-                <i class="material-icons">trip_origin</i>
-                &nbsp;&nbsp;
+                <i class="material-icons">trip_origin</i> &nbsp;&nbsp;
                 <span class="list-toggle"> មន្ទីរពេទ្យ</span>
             </mat-list-item>
             <mat-divider class="divider"></mat-divider>
             <mat-list-item matRipple (click)="togglesidebar()" [routerLink]="['/post/DN1ntsqgz7MQbvZ65juI']">
-                <i class="material-icons">trip_origin</i>
-                &nbsp;&nbsp;
+                <i class="material-icons">trip_origin</i> &nbsp;&nbsp;
                 <span class="list-toggle"> អាហារ</span>
             </mat-list-item>
             <mat-divider class="divider"></mat-divider>
-            <mat-list-item matRipple (click)="togglesidebar()"
-            [routerLink]="['/post/KguAud8xbnLqF4KTAcbr']">
-                <i class="material-icons">trip_origin</i>
-                &nbsp;&nbsp;
+            <mat-list-item matRipple (click)="togglesidebar()" [routerLink]="['/post/KguAud8xbnLqF4KTAcbr']">
+                <i class="material-icons">trip_origin</i> &nbsp;&nbsp;
                 <span class="list-toggle"> ហាត់ប្រាណ</span>
             </mat-list-item>
             <mat-divider class="divider"></mat-divider>
             <mat-list-item matRipple (click)="togglesidebar()" [routerLink]="['/post/vXEVr8vr6jQusyTPpcxw']">
-                <i class="material-icons">trip_origin</i>
-                &nbsp;&nbsp;
+                <i class="material-icons">trip_origin</i> &nbsp;&nbsp;
                 <span class="list-toggle"> កុមារ</span>
             </mat-list-item>
             <mat-divider class="divider"></mat-divider>
             <mat-list-item matRipple (click)="togglesidebar()" [routerLink]="['/post/tqinYPs1Kd7IZHsDxCkL']">
-                <i class="material-icons">trip_origin</i>
-                &nbsp;&nbsp;
+                <i class="material-icons">trip_origin</i> &nbsp;&nbsp;
                 <span class="list-toggle"> បច្ចេកវិទ្យា</span>
             </mat-list-item>
             <mat-divider class="divider"></mat-divider>
             <mat-list-item matRipple (click)="togglesidebar()" [routerLink]="['/post/FcMvC7mMQWkTET9o7izV']">
-                <i class="material-icons">trip_origin</i>
-                &nbsp;&nbsp;
+                <i class="material-icons">trip_origin</i> &nbsp;&nbsp;
                 <span class="list-toggle"> គំនិតរកសុី</span>
             </mat-list-item>
         </mat-list>
     </div>
-    <div  class="sidebar-footer"> 
-        <div  class="sidebar-toggle-button">
-            <div  class="arrow-icon"></div>
+    <div class="sidebar-footer">
+        <div class="sidebar-toggle-button">
+            <div class="arrow-icon"></div>
         </div>
     </div>
 </aside>
-
